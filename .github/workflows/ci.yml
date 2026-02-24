@@ -15,9 +15,9 @@ jobs:
 
       - name: Validate Kubernetes manifests
         run: |
-          # This checks if the YAML is well-formed
-          kubectl marathon --dry-run=client -f deployment.yaml
-          
+          # Use 'apply' with dry-run to check syntax locally
+          kubectl apply --dry-run=client -f deployment.yaml
+
       - name: Check for common errors
         run: |
           # Simple check to ensure both Deployment and Service exist
