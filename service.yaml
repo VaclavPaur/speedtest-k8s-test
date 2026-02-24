@@ -9,6 +9,6 @@ spec:
     app: speedtest
   ports:
     - protocol: TCP
-      port: 80
+      port: 8888
       targetPort: 80
   type: LoadBalancer # This makes it accessible on localhost for Docker Desktop
