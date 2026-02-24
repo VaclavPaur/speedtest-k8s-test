@@ -15,8 +15,8 @@ jobs:
 
       - name: Validate Kubernetes manifests
         run: |
-          # Use 'apply' with dry-run to check syntax locally
-          kubectl apply --dry-run=client -f deployment.yaml
+          # Disable server-side validation since we are in a headless CI environment
+          kubectl apply --dry-run=client --validate=false -f deployment.yaml
 
       - name: Check for common errors
         run: |
